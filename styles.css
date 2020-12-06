@@ -1,0 +1,59 @@
+
+
+.active {
+    background-color: green !important;
+}
+
+.headers {
+    padding-top: 2vw;
+    text-align: center;
+    font-family: "Yu Gothic UI Light", serif;
+    font-weight: bold;
+
+}
+
+
+html body{
+    background-color: #fffbe6 !important;
+
+}
+
+.exercise {
+    width: 90%;
+    float: none;
+    margin: 0 auto 10px;
+}
+
+.exercise button {
+    margin-left: 1vw;
+}
+
+.myText {
+    margin: 2vw;
+    font-family: "Arial", serif;
+    font-size: 18pt;
+}
+
+.card {
+    margin: 2vw;
+}
+
+.cExerciseHeader {
+    background-color: aqua !important;
+}
+
+.cDefinitionHeader {
+    background-color: #ff9ed7 !important;
+}
+
+.cExampleHeader {
+   background-color: #b1ffa0 !important;
+}
+
+.cSourcesHeader {
+    background-color: #ff9843 !important;
+}
+
+.topImage {
+    margin: 1vw;
+}
