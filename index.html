@@ -44,12 +44,278 @@
         <p>
             <b>Social Choice Theory</b> is a type of methodology for making equitable decision-making. Specifically,
             these decisions are based on user preferences, opinions, and interests and potentially other
-            characteristics.
+            characteristics. This decision that is reached needs to be more or less collective.
 
         </p>
     </div>
-
 </div>
+
+<div class="myText">
+    Hopefully those definitions gave you some idea of where we are going in this chapter. Computational social choice
+    is seen all over the place and this chapters will show you some of those examples as well as the underlying
+    mathematical
+    notion of how those examples can be expressed. Mainly, this chapter will be concerned with making decisions in
+    elections
+    of various forms and analyzing the pros and cons of different election rules. Let us begin with the simplest
+    definition which is that of a voter.
+</div>
+
+<div class="exercise card" data-toggle="modal" data-target="#model-5">
+    <div class="cDefinitionHeader card-header">
+        Definitions
+    </div>
+    <div class="card-body">
+        A <b>Voter</b> is simply an entity who votes in an election.
+    </div>
+</div>
+
+<div class="myText">
+    This definition directly follows from the real-world concept of a voter. The next few definitions will similarly
+    follow from real-world concepts.
+</div>
+
+<div class="exercise card" data-toggle="modal" data-target="#model-5">
+    <div class="cDefinitionHeader card-header">
+        Definitions
+    </div>
+    <div class="card-body">
+        A <b>Candidate/Alternative</b> is an entity that can be voted for in an election.
+        <br>
+        <br>
+        A <b>Preference Ballot/Profile/List</b> is a ranking of the candidates.
+        <br>
+        <br>
+        Each voter constructs a preference list.
+    </div>
+</div>
+
+<div class="myText">
+    Now that we established how an election can be described, we can discuss different rules in these elections
+    and the pros and cons of each type of rule.
+</div>
+
+<div class="exercise card" data-toggle="modal" data-target="#model-5">
+    <div class="cDefinitionHeader card-header">
+        Definitions (Voting Rules)
+    </div>
+    <div class="card-body">
+        The <b>Plurality Rule</b> for voting is when we only consider the top-ranked candidate for each voter. Then
+        the candidate that is top-ranked the most times is the winner of the election.
+    </div>
+</div>
+
+<div class="exercise card" data-toggle="modal" data-target="#model-5">
+    <div class="cExampleHeader card-header">
+        Real Life Example
+    </div>
+    <div class="card-body">
+        The plurality rule is essentially what the United States uses for its elections. Each state lists its
+        first preference choice and then across all states the candidate with the most first choice across each state
+        (multiplied by some electoral college weight for population) is the victor. Note that this does not necessarily
+        imply
+        that the winning candidate got the majority of the votes/is the most preferred.
+    </div>
+</div>
+
+<div class="exercise card" data-toggle="modal" data-target="#model-5">
+    <div class="cExampleHeader card-header">
+        Example
+    </div>
+    <div class="card-body">
+        Consider the following table of voting where the first row indicates the number of people with that permutation
+        preference list for those candidates.
+        <table>
+            <tr>
+                <td>2</td>
+                <td>4</td>
+                <td>4</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>Alice</td>
+                <td>Alice</td>
+                <td>Bob</td>
+                <td>Charlie</td>
+            </tr>
+            <tr>
+                <td>Bob</td>
+                <td>Charlie</td>
+                <td>Charlie</td>
+                <td>Alice</td>
+            </tr>
+            <tr>
+                <td>Charlie</td>
+                <td>Bob</td>
+                <td>Alice</td>
+                <td>Bob</td>
+            </tr>
+        </table>
+
+        Then Alice gets 6 first choice votes, Bob gets 4, and Charlie gets 4. So, Alice would be the winner.
+        However, note that Alice would not win a head to head with both Bob and Charlie even though she wins against
+        both
+        at the same time. Consider Alice vs Charlie. Then Alice would get $(2+4) = 6$ first place votes but Charlie
+        would get
+        $(4+4) = 8$ first place votes. So, Charlie would have won if Bob was not present. We will explore what this
+        property
+        is called below.
+    </div>
+</div>
+
+<div class="exercise card" data-toggle="modal" data-target="#model-5">
+    <div class="cDefinitionHeader card-header">
+        Definitions (Voting Rules)
+    </div>
+    <div class="card-body">
+        The <b>Instant Runoff/Plurality With Elimination</b> for voting is when each round, we eliminate the candidate
+        with the least first place votes. This continues until a majority is reached for a specific candidate. That candidate is
+        declared the winner of the election.
+    </div>
+</div>
+
+<div class="exercise card" data-toggle="modal" data-target="#model-5">
+    <div class="cExampleHeader card-header">
+        Real Life Example
+    </div>
+    <div class="card-body">
+        This voting rule is actually used for the Australian House of Representatives election.
+    </div>
+</div>
+
+
+<div class="exercise card" data-toggle="modal" data-target="#model-5">
+    <div class="cExampleHeader card-header">
+        Example
+    </div>
+    <div class="card-body">
+        Using a similar table to previous example
+        <table>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>4</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>Alice</td>
+                <td>Alice</td>
+                <td>Bob</td>
+                <td>Charlie</td>
+            </tr>
+            <tr>
+                <td>Bob</td>
+                <td>Charlie</td>
+                <td>Charlie</td>
+                <td>Alice</td>
+            </tr>
+            <tr>
+                <td>Charlie</td>
+                <td>Bob</td>
+                <td>Alice</td>
+                <td>Bob</td>
+            </tr>
+        </table>
+
+        Note that there are a total of 13 voters so it takes 7 votes to reach a majority. In the first round Charlie
+        gets 6 first place votes so a majority is not reached. Therefore we eliminate the person with least first-place
+        votes which in this case would be Alice. Then in the next round with just Charlie and Bob, Charlie gets
+        $2+4+6 = 12$ first-place votes and Bob would get just 1 first-place vote. Therefore Charlie would be declared
+        the winner since he got the majority.
+    </div>
+</div>
+
+<div class="exercise card" data-toggle="modal" data-target="#model-5">
+    <div class="cDefinitionHeader card-header">
+        Definitions (Voting Rules)
+    </div>
+    <div class="card-body">
+        The similar <b>Plurality With Runoff Rule</b> for voting is when you take the first and second place winner
+        based on the number of first-place votes and pit them against each other.
+    </div>
+</div>
+
+<div class="exercise card" data-toggle="modal" data-target="#model-5">
+    <div class="cExampleHeader card-header">
+        Example
+    </div>
+    <div class="card-body">
+       For the previous table Alice has $3$ first place votes, Bob has $4$ and Charlie has $6$. So since Bob and Charlie
+        are in second and first place respectively, they would go against each other and the end result would be the
+        same as in the previous example.
+    </div>
+</div>
+
+<div class="exercise card" data-toggle="modal" data-target="#model-5">
+    <div class="cDefinitionHeader card-header">
+        Definitions (Voting Rules)
+    </div>
+    <div class="card-body">
+        The <b>Borda Count</b> voting rule is another voting rule where for each voter's preference list, 1
+        point is given to the last place candidate, 2 to second to last, 3 to third to last, and so on. Then the candidate
+        with the most amount of points at the end is declared the winner.
+    </div>
+</div>
+
+<div class="exercise card" data-toggle="modal" data-target="#model-5">
+    <div class="cExampleHeader card-header">
+        Example
+    </div>
+    <div class="card-body">
+        Consider the following table of voting where the first row indicates the number of people with that permutation
+        preference list for those candidates.
+        <table>
+            <tr>
+                <td>2</td>
+                <td>4</td>
+                <td>4</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>Alice</td>
+                <td>Alice</td>
+                <td>Bob</td>
+                <td>Charlie</td>
+            </tr>
+            <tr>
+                <td>Bob</td>
+                <td>Charlie</td>
+                <td>Charlie</td>
+                <td>Alice</td>
+            </tr>
+            <tr>
+                <td>Charlie</td>
+                <td>Bob</td>
+                <td>Alice</td>
+                <td>Bob</td>
+            </tr>
+        </table>
+
+        In this table there are 3 candidates, so first-place gets 3 per voter, second-place 2, and third-place 1.
+        Then for this table Alice gets $2*3 + 4*3 + 1*4 + 2*5 = 6+12+4+8=32$ for column 1,2,3,4 respectively.
+        Using the same method Bob gets $2*2 + 4*1 + 4*3 + 5*1 = 25$ and finally Charlie gets
+        $2*1 + 4*2 + 4*2 + 5*3 = 33$. So Charlie would be declared the winner. Note that if we were using the
+        plurality rule then Alice would be declared the winner.
+    </div>
+</div>
+
+<div class="exercise card" data-toggle="modal" data-target="#model-5">
+    <div class="cExampleHeader card-header">
+        Real Life Example
+    </div>
+    <div class="card-body">
+        The Borda Count is used all over the place. One instance is the selection of the MVP in Major
+        League Baseball.
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
 
 
 <!--Exercise Card-->
@@ -114,6 +380,10 @@
         https://en.wikipedia.org/wiki/Theoretical_computer_science
         <br>
         https://en.wikipedia.org/wiki/Social_choice_theory
+        <br>
+        http://research.illc.uva.nl/COMSOC/what-is-comsoc.html
+        <br>
+        http://www.opentextbookstore.com/mathinsociety/current/VotingTheory.pdf
     </div>
 </div>
 

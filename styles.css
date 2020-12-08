@@ -11,6 +11,17 @@
     font-weight: bold;
 
 }
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
 
 
 html body{
@@ -29,9 +40,12 @@ html body{
 }
 
 .myText {
-    margin: 2vw;
-    font-family: "Arial", serif;
-    font-size: 18pt;
+    margin-left: 2vw;
+    margin-right: 4vw;
+
+
+    /*font-family: "Arial", serif;*/
+    font-size: 1.2rem;
 }
 
 .card {
