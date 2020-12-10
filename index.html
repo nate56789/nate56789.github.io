@@ -308,66 +308,431 @@
     </div>
 </div>
 
+<div class="exercise card" data-toggle="modal" data-target="#model-5">
+    <div class="cDefinitionHeader card-header">
+        Definitions (Voting Rules)
+    </div>
+    <div class="card-body">
+        The last voting rule we will discuss is <b>Copeland's Method</b>. In this method, every possible one on
+        one match-up is considered. In each match-up, the candidate that is preferred by more voters to the other one
+        gets a point. Then the candidate with the most points across all the pairwise match-ups (election with two people)
+        is declared the winner.
+    </div>
+</div>
 
+<div class="myText">
+    We talked about different rules, but now we will discuss the different voting properties that exist,
+    which we may want to satisfy, and which of the above rules satisfy which property.
+</div>
 
+<div class="exercise card" data-toggle="modal" data-target="#model-5">
+    <div class="cDefinitionHeader card-header">
+        Definitions (Voting Rule Property)
+    </div>
+    <div class="card-body">
+        We say a voting rule is <b>Condorcet Consistent</b> if a candidate, when put against any of the other
+        candidate in a one-on-one, is preferred by more voters, then that candidate is the winner. <i>Note that
+        the converse need not necessarily be true.</i>
+    </div>
+</div>
 
-
-
-
-
-
-
-
-<!--Exercise Card-->
 <div class="exercise card" data-toggle="modal" data-target="#model-5">
     <div class="cExerciseHeader card-header">
         Exercise
     </div>
     <div class="card-body">
-        Opened in October 2002, Blue Monkey Tea is a specialty tea store located in Squirrel Hill neighborhood of
-        Pittsburgh, Pennsylvania. The tea shop features over 400 varieties of teas, a huge assortment of teapots and
-        tea gadgets, and international sweets. In addition, they also offer tea classes and tea tastings every
-        month.
+        Prove Copeland's Method is Condorcet Consistent
     </div>
     <p>
         <button onclick="solutionClicked(this)" class="btn btn-primary" type="button" data-toggle="collapse"
-                data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">See Solution
-        </button>
+                data-target="#proof1" aria-expanded="false" aria-controls="collapseExample">See Solution</button>
     </p>
-    <div class="collapse" id="collapseExample">
+    <div class="collapse" id="proof1">
         <div class="card card-body">
-            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim
-            keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+            This method is by definition Condorcet Consistent. Assume that there is a candidate, say $X$ that in a one-on-one
+            is preferred to every candidate. Then in every pairwise election involving $2$, we see $X$ will win and receive a point.
+            Therefore, $X$ by construction will receive the most points and therefore will be declared the winner.
+            Therefore Copeland's Method is Condorcet Consistent.
         </div>
     </div>
 </div>
 
-<!--Definition Card-->
 <div class="exercise card" data-toggle="modal" data-target="#model-5">
     <div class="cDefinitionHeader card-header">
-        Definitions
+        Definitions (Voting Rule Property)
     </div>
     <div class="card-body">
-        Opened in October 2002, Blue Monkey Tea is a specialty tea store located in Squirrel Hill neighborhood of
-        Pittsburgh, Pennsylvania. The tea shop features over 400 varieties of teas, a huge assortment of teapots and
-        tea gadgets, and international sweets. In addition, they also offer tea classes and tea tastings every
-        month.
+        We say a voting rule has the <b>Monotonicity Criterion</b> if voters shift their preference lists to prefer
+        a candidate more, say $X$, that should not decrease the chance for $X$ to win. Intuitively this is something
+        we would definitely want in an election.
     </div>
-
 </div>
 
-<!--Example Card-->
+<div class="exercise card" data-toggle="modal" data-target="#model-5">
+    <div class="cDefinitionHeader card-header">
+        Definitions (Voting Rule Property)
+    </div>
+    <div class="card-body">
+        We say a voting rule has the <b>Majority Criterion</b> if the candidate declared the winner of the election
+        necessarily has the largest number of first place votes.
+    </div>
+</div>
+
+<div class="exercise card" data-toggle="modal" data-target="#model-5">
+    <div class="cDefinitionHeader card-header">
+        Definitions (Voting Rule Property)
+    </div>
+    <div class="card-body">
+        The <b>Independence of Irrelevant Alternatives Criterion</b> essentially states if a non-winning candidate
+        is removed from the ballot (and the preference list for the voters stays the same modulo the removed candidate),
+        then the winner of the election should not change.
+    </div>
+</div>
+
+<div class="myText">
+    There are also other ways to vote besides a preference list for each voter. One example is approval voting.
+</div>
+
+<div class="exercise card" data-toggle="modal" data-target="#model-5">
+    <div class="cDefinitionHeader card-header">
+        Definitions (Voting Style)
+    </div>
+    <div class="card-body">
+        <b>Approval Voting</b> is different from preference list voting in that instead of each voter ranking each
+        candidate from most liked to least liked, they instead simply mark which candidates they approve of. In this
+        way each approved candidate for a single voter essentially has the same preference. Then the candidate with
+        the most approvals is declared the winner.
+    </div>
+</div>
+
 <div class="exercise card" data-toggle="modal" data-target="#model-5">
     <div class="cExampleHeader card-header">
-        Real Life Example
+        Example
     </div>
     <div class="card-body">
-        Opened in October 2002, Blue Monkey Tea is a specialty tea store located in Squirrel Hill neighborhood of
-        Pittsburgh, Pennsylvania. The tea shop features over 400 varieties of teas, a huge assortment of teapots and
-        tea gadgets, and international sweets. In addition, they also offer tea classes and tea tastings every
-        month.
+        Consider the following table representing an approval vote.
+        <table>
+            <tr>
+                <td></td>
+                <td>Alice</td>
+                <td>Bob</td>
+                <td>Charlie</td>
+                <td>Dave</td>
+                <td>Edward</td>
+            </tr>
+            <tr>
+                <td>Pulp Fiction</td>
+                <td></td>
+                <td>X</td>
+                <td></td>
+                <td>X</td>
+                <td>X</td>
+            </tr>
+            <tr>
+                <td>Django</td>
+                <td></td>
+                <td>X</td>
+                <td></td>
+                <td></td>
+                <td>X</td>
+            </tr>
+            <tr>
+                <td>Once Upon a Time in Hollywood</td>
+                <td>X</td>
+                <td>X</td>
+                <td>X</td>
+                <td>X</td>
+                <td>X</td>
+            </tr>
+        </table>
+        <br>
+        <p>Then the movie Once Upon a Time in Hollywood would win the election as it was approved by 5 voters.
+        Note that this style of voting may be problematic because a voter may really want one candidate to win so
+            then they only approve that single candidate and no one else. This can change the result of the election.</p>
+
+        <p>Also note that this style of voting is not necessarily majority consistent as everyone in a voters
+        preference list gets weighted equally so it is definitely not the case that the most preferred candidate
+        is necessarily the winner of the election.</p>
     </div>
 </div>
+
+<div class="myText">
+   Now we will do some exercises showing the pros and cons of the above voting rules using the different characteristics
+    that we described above.
+</div>
+
+
+<div class="exercise card" data-toggle="modal" data-target="#model-5">
+    <div class="cExerciseHeader card-header">
+        Exercise
+    </div>
+    <div class="card-body">
+        Prove that the plurality rule is <b>not</b> Condorcet Consistent.
+    </div>
+    <p>
+        <button onclick="solutionClicked(this)" class="btn btn-primary" type="button" data-toggle="collapse"
+                data-target="#ex2" aria-expanded="false" aria-controls="collapseExample">See Solution</button>
+    </p>
+    <div class="collapse" id="ex2">
+        <div class="card card-body">
+            Consider the following table of voting where the first row indicates the number of people with that permutation
+            preference list for those candidates.
+            <table>
+                <tr>
+                    <td>2</td>
+                    <td>4</td>
+                    <td>4</td>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <td>Alice</td>
+                    <td>Alice</td>
+                    <td>Bob</td>
+                    <td>Charlie</td>
+                </tr>
+                <tr>
+                    <td>Bob</td>
+                    <td>Charlie</td>
+                    <td>Charlie</td>
+                    <td>Alice</td>
+                </tr>
+                <tr>
+                    <td>Charlie</td>
+                    <td>Bob</td>
+                    <td>Alice</td>
+                    <td>Bob</td>
+                </tr>
+            </table>
+
+            So, Alice would be the winner here by plurality rules (easy to verify).
+            Consider Alice vs Charlie without Bob. Alice would get $(2+4) = 6$ first place votes but Charlie
+            would get
+            $(4+4) = 8$ first place votes. So, Charlie would have won if Bob was not present rather than Alice.
+            Additionally, Charlie would also have won against Bob by similar logic. So this example shows plurality is not condorcet consistent.
+        </div>
+    </div>
+</div>
+
+<div class="exercise card" data-toggle="modal" data-target="#model-5">
+    <div class="cExerciseHeader card-header">
+        Exercise
+    </div>
+    <div class="card-body">
+        Prove that Borda Count is <b>not</b> Condorcet Consistent.
+    </div>
+    <p>
+        <button onclick="solutionClicked(this)" class="btn btn-primary" type="button" data-toggle="collapse"
+                data-target="#ex3" aria-expanded="false" aria-controls="collapseExample">See Solution</button>
+    </p>
+    <div class="collapse" id="ex3">
+        <div class="card card-body">
+            Consider the following table of voting where the first row indicates the number of people with that permutation
+            preference list for those candidates.
+            <table>
+                <tr>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>Alice</td>
+                    <td>Alice</td>
+                    <td>Bob</td>
+                    <td>Charlie</td>
+                    <td>Derek</td>
+                </tr>
+                <tr>
+                    <td>Charlie</td>
+                    <td>Derek</td>
+                    <td>Alice</td>
+                    <td>Bob</td>
+                    <td>Bob</td>
+                </tr>
+                <tr>
+                    <td>Bob</td>
+                    <td>Bob</td>
+                    <td>Charlie</td>
+                    <td>Alice</td>
+                    <td>Alice</td>
+                </tr>
+                <tr>
+                    <td>Derek</td>
+                    <td>Charlie</td>
+                    <td>Derek</td>
+                    <td>Derek</td>
+                    <td>Charlie</td>
+                </tr>
+            </table>
+
+           Under Borda count, Alice gets $4+4+3+2+2=15$, Charlie gets $3+1+2+4+1=11$, Bob gets
+            $2+2+4+3+3=14$ and Derek gets $1+3+1+1+4 = 10$. So, Alice would be declared the winner under Borda
+            Count rules. However, note that Bob, in a one-on-one with any of the other candidates, would be
+            declared the winner. So this counterexample shows Borda Count is not Condorcet Consistent.
+        </div>
+    </div>
+</div>
+
+
+<div class="myText">
+   The above two results are actually very interesting (and surprising) because intuitively one of the two rules
+    is one that you would most likely pick to use if you were doing an election. However, in both cases it may very well
+    occur that the winner you select is not actually preferred by most voters. This can easily be a reason why it
+    frequently seems like a majority of individuals may be upset with election results (when the election is strictly
+    more than 2 candidates). It also exposes what could be considered a flaw in our voting system.
+</div>
+
+<div class="exercise card" data-toggle="modal" data-target="#model-5">
+    <div class="cExerciseHeader card-header">
+        Exercise
+    </div>
+    <div class="card-body">
+        Prove that a voting rule having majority consistency does not imply it also has Condorcet consistency
+    </div>
+    <p>
+        <button onclick="solutionClicked(this)" class="btn btn-primary" type="button" data-toggle="collapse"
+                data-target="#ex4" aria-expanded="false" aria-controls="collapseExample">See Solution</button>
+    </p>
+    <div class="collapse" id="ex4">
+        <div class="card card-body">
+            Plurality Voting is majority consistent by definition of picking the candidate with the largest
+            number of first-place votes. However, it was just shown that plurality voting is not necessarily
+            Condorcet Consistent.
+        </div>
+    </div>
+</div>
+
+<div class="exercise card" data-toggle="modal" data-target="#model-5">
+    <div class="cExerciseHeader card-header">
+        Exercise
+    </div>
+    <div class="card-body">
+        Prove that a voting rule having Condorcet consistency <b>does</b> imply the majority criterion
+    </div>
+    <p>
+        <button onclick="solutionClicked(this)" class="btn btn-primary" type="button" data-toggle="collapse"
+                data-target="#ex5" aria-expanded="false" aria-controls="collapseExample">See Solution</button>
+    </p>
+    <div class="collapse" id="ex5">
+        <div class="card card-body">
+            This follows from what we want to show. Assume that the voting rule satisfies condorcet consistency.
+            Then we want to show that a candidate having a majority of first place votes implies that the candidate
+            is the winner. If a candidate has the majority of first place votes, then in any pairwise election, that
+            candidate will still have more first-place votes than the other candidate since they have a majority. Then
+            by definition of condorcet consistency, this implies that this candidate would be the winner. Therefore
+            the voting rule would also be majority consistent.
+        </div>
+    </div>
+</div>
+
+<div class="myText">
+   These results are actually very interesting because they show that condorcet consistency is actually stronger
+    than the majority criterion which intuitively may not make sense as they both seem equally strong. The last thing
+    we will talk about is a very interesting <b>theorem</b> about the limitations of preference voting.
+</div>
+
+<div class="exercise card" data-toggle="modal" data-target="#model-5">
+    <div class="cDefinitionHeader card-header">
+        Definitions (Preference List Voting Theorem)
+    </div>
+    <div class="card-body">
+        <b>Arrow's Impossibility Theorem</b> describes how it is <b>Impossible</b> to construct a voting rule with
+        preference lists that satisfies <b>all</b> three of these properties:
+
+        <ul>
+            <li>If every voter prefers one candidate over another, then that preferred candidate is the winenr</li>
+            <li>The isolation property which really means that if you consider two candidates in isolation, and
+            don't change the preference between them, then the outcome of the election would not change the
+            preference between these two candidates even if other preferences between other candidates changes</li>
+            <li>Non-dictatorship which really means that no single voter can <b>always</b> influence the election
+            outcome. In other words, the votes of many voters are taken into account.</li>
+
+        </ul>
+    </div>
+</div>
+
+<div class="myText">
+    This is surprising because it shows an inherent flaw in this style of voting and how it is provably impossible
+    to get all three of these desired characteristics. This is extremely similar to the database CAP theorem which also
+    highlights how it is impossible to get 3 desired characteristics about databases.
+</div>
+
+<div class="myText">
+    Hopefully, this chapter gave you some insight into popular voting strategies, the desirable characteristics,
+    and the limitations of these strategies.
+</div>
+
+
+<div class="exercise card" data-toggle="modal" data-target="#model-5">
+    <div class="CYU card-header">
+        Check Your Understanding
+    </div>
+    <div class="card-body">
+        <ul>
+            <li>What is a voter?</li>
+            <li>What is a candidate/alternative?</li>
+            <li>What is plurality voting?</li>
+            <li>What is an issue with plurality voting?</li>
+            <li>What is the Borda Count and what are some issues with it?</li>
+        </ul>
+    </div>
+</div>
+
+<div class="exercise card" data-toggle="modal" data-target="#model-5">
+    <div class="exercisesSection card-header">
+        Exercises
+    </div>
+    <div class="card-body">
+        <ul>
+            <li>Does Borda Count satisfy The Independence of Irrelevant Alternatives Criterion?</li>
+            <li>Create an example of preference lists that under Borda count do not satisfy
+                Condorcet consistency. Then create one that does.
+            </li>
+            <li>
+                Consider the following table of voting where the first row indicates the number of people with that permutation
+                preference list for those candidates.
+                <table>
+                    <tr>
+                        <td>4</td>
+                        <td>1</td>
+                        <td>6</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>Pooh</td>
+                        <td>Tiger</td>
+                        <td>Piglet</td>
+                        <td>Rabbit</td>
+                    </tr>
+                    <tr>
+                        <td>Piglet</td>
+                        <td>Pooh</td>
+                        <td>Tiger</td>
+                        <td>Rabbit</td>
+                    </tr>
+                    <tr>
+                        <td>Rabbit</td>
+                        <td>Tiger</td>
+                        <td>Piglet</td>
+                        <td>Pooh</td>
+                    </tr>
+                </table>
+
+                Find the winner using all the different voting rules for preference lists that you learned in
+                this chapter.
+
+
+            </li>
+            <li>Although Copeland's Method seems like the best one we covered, come up with a negative
+            with this method (hint: it does not have to do with the outcome of the election)</li>
+            <li>Come up with an election strategy not described in this chapter and see which of the
+            properties we discussed it satisfies.</li>
+
+        </ul>
+    </div>
+</div>
+
 
 <!--Sources Card-->
 <div class="exercise card" data-toggle="modal" data-target="#model-5">
@@ -375,18 +740,20 @@
         Sources
     </div>
     <div class="card-body">
-        https://en.wikipedia.org/wiki/Computational_social_choice
+        For this chapter, all the proofs and prose is entirely written on my own (I wrote it up after
+        reading through different sources on voting and computational social choice). I wrote up the definitions
+        myself after reading the sources in my own words. The proofs I came up with myself and same with all of the examples
+        (except those about real-life usages of the different voting rules). Nothing in this chapter was copy-pasted.
+        Finally, I also came up with the CYU questions and the exercises.
         <br>
+        <br>
+        “Computational Social Choice.” Wikipedia, Wikimedia Foundation, 14 Nov. 2020, en.wikipedia.org/wiki/Computational_social_choice.         <br>
         https://en.wikipedia.org/wiki/Theoretical_computer_science
         <br>
-        https://en.wikipedia.org/wiki/Social_choice_theory
+        “Social Choice Theory.” Wikipedia, Wikimedia Foundation, 4 Dec. 2020, en.wikipedia.org/wiki/Social_choice_theory.
         <br>
-        http://research.illc.uva.nl/COMSOC/what-is-comsoc.html
-        <br>
-        http://www.opentextbookstore.com/mathinsociety/current/VotingTheory.pdf
-    </div>
+        “What Is Computational Social Choice?” Computational Social Choice, 2016, research.illc.uva.nl/COMSOC/what-is-comsoc.html.<br>
+        Lippman, David. "Voting Theory" (http://www.opentextbookstore.com/mathinsociety/current/VotingTheory.pdf). Math in Society.</div>
 </div>
-
-
 </body>
 </html>

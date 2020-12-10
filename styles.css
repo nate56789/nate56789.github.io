@@ -48,6 +48,7 @@ html body{
 
 .card {
     margin: 2vw;
+    display: block !important;
 }
 
 .cExerciseHeader {
@@ -64,6 +65,14 @@ html body{
 
 .cSourcesHeader {
     background-color: #ff9843 !important;
+}
+
+.CYU {
+    background-color: #ff524f !important;
+}
+
+.exercisesSection {
+    background-color: #bffff3 !important;
 }
 
 .topImage {
